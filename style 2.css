@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  padding: 0 5px;
+}
+.head{
+  background: lightblue;
+}
+.nav{
+  background: lightgreen;
+}
+.main{
+  background: lightpink;
+}
+.main article{
+  text-align: center;
+  border: 1px solid red;
+}
+.side{
+  background: #eee;
+}
+.side article{
+  border-bottom: 1px solid grey;
+}
+
+.foot{
+  background: #ddd;
+}
+/*//^^^^simple style^^^^^//*/
+/*//vvvvv Grid Style vvvvv//*/
+
+.nav{
+grid-area: nav;
+}
+
+.head{
+grid-area: hd;
+}
+
+.main{
+grid-area: main;
+}
+
+.side{
+grid-area: side;
+}
+
+.foot{
+grid-area: foot;
+}
+
+.grid{
+height: 100vh;
+display: grid;
+grid-template-columns: repeat(4, ifr);
+grid-gap: 5px;
+grid-template-areas:
+'main main hd nav'
+'main main side side'
+'main main side side'
+'foot foot side side'
+}
+
+@media screen and (max-width: 800px) {
+  .grid{
+    grid-template-columns: auto 20%;
+    grid-template-areas:
+    'hd hd'
+    'main nav'
+    'main side'
+    'main side'
+    'foot foot'
+  }
+}
